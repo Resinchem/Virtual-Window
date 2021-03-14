@@ -1,5 +1,5 @@
 # Virtual-Window
-## A virtual window for a window-less basement. 
+## A virtual window for a windowless basement. 
 
 ![PiWindow_Cropoped](https://user-images.githubusercontent.com/55962781/111055783-4f206680-8447-11eb-8ae0-bcf81e2ed6f3.jpg)
 
