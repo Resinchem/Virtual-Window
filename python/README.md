@@ -27,4 +27,8 @@ There are a few other optional settings at the top of the file you may wish to c
 
 The application can be launched by running the command: ```python3 vlc_player.py```
 
+## Sample Videos
+
+The vids folder contains the royalty-free or creative commons videos used in the default Python application.
+
 ### More details on installation, configuration and use can be found in the wiki
