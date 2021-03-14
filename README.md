@@ -10,6 +10,6 @@
 * Control the feeds or video via local button control or via MQTT/Home Assistant
 * Removable cross-grid (muntin or mullion or whatever you call them), allows use as a regular smart TV when not in "window mode"
 
-#### Full build instructions, parts list and more can be found on the Resinchem Tech Blog.
+#### Full build instructions, parts list and more can be found on the [Resinchem Tech Blog](https://resinchemtech.blogspot.com/2021/03/a-virtual-window-for-windowless-basement.html).
 
 #### Details on installation of the software, button use and MQTT commands can be found in the wiki.
