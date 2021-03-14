@@ -12,4 +12,4 @@
 
 ### Full build instructions, parts list and more can be found on the [Resinchem Tech Blog](https://resinchemtech.blogspot.com/2021/03/a-virtual-window-for-windowless-basement.html).
 
-#### Details on installation of the software, button use and MQTT commands can be found in the wiki.
+#### Details on installation of the software, button use and MQTT commands can be found in the [wiki](https://github.com/Resinchem/Virtual-Window/wiki).
