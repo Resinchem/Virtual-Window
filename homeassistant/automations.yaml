@@ -1,0 +1,191 @@
+# ==========================================
+# Process input selects to play 
+# camera or video via vlc_player.py on Raspi
+# ==========================================
+# ==============
+#   CAMERAS
+# ==============
+- alias: Pi Media Backyard Cam
+  trigger:
+    platform: state
+    entity_id: input_select.select_window_cam
+    to: 'Backyard'
+  action:
+    - service: script.turn_on
+      entity_id: script.pi_win_cam_backyard
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_vid
+        option: "None"
+- alias: Pi Media Front Yard Cam
+  trigger:
+    platform: state
+    entity_id: input_select.select_window_cam
+    to: 'Front Yard'
+  action:
+    - service: script.turn_on
+      entity_id: script.pi_win_cam_frontyard
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_vid
+        option: "None"
+- alias: Pi Media Backporch Cam
+  trigger:
+    platform: state
+    entity_id: input_select.select_window_cam
+    to: 'Back Porch'
+  action:
+    - service: script.turn_on
+      entity_id: script.pi_win_cam_backporch
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_vid
+        option: "None"
+- alias: Pi Media Family Room Cam
+  trigger:
+    platform: state
+    entity_id: input_select.select_window_cam
+    to: 'Family Room'
+  action:
+    - service: script.turn_on
+      entity_id: script.pi_win_cam_familyroom
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_vid
+        option: "None"
+- alias: Pi Media Garage Cam
+  trigger:
+    platform: state
+    entity_id: input_select.select_window_cam
+    to: 'Garage'
+  action:
+    - service: script.turn_on
+      entity_id: script.pi_win_cam_garage
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_vid
+        option: "None"
+
+# ===============
+#    VIDEOS
+# ===============
+- alias: Pi Media Beach01 Vid
+  trigger:
+    platform: state
+    entity_id: input_select.select_window_vid
+    to: 'Beach 01'
+  action:
+    - service: script.turn_on
+      entity_id: script.pi_win_vid_beach01
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_cam
+        option: "None"
+- alias: Pi Media Beach02 Vid
+  trigger:
+    platform: state
+    entity_id: input_select.select_window_vid
+    to: 'Beach 02'
+  action:
+    - service: script.turn_on
+      entity_id: script.pi_win_vid_beach02
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_cam
+        option: "None"
+- alias: Pi Media Beach03 Vid
+  trigger:
+    platform: state
+    entity_id: input_select.select_window_vid
+    to: 'Beach 03'
+  action:
+    - service: script.turn_on
+      entity_id: script.pi_win_vid_beach03
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_cam
+        option: "None"
+- alias: Pi Media Carib Dock Vid
+  trigger:
+    platform: state
+    entity_id: input_select.select_window_vid
+    to: 'Caribbean Dock'
+  action:
+    - service: script.turn_on
+      entity_id: script.pi_win_vid_caribbeandock
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_cam
+        option: "None"
+- alias: Pi Media Forest Stream Vid
+  trigger:
+    platform: state
+    entity_id: input_select.select_window_vid
+    to: 'Forest Stream'
+  action:
+    - service: script.turn_on
+      entity_id: script.pi_win_vid_foreststream
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_cam
+        option: "None"
+- alias: Pi Media Mountain Flowers Vid
+  trigger:
+    platform: state
+    entity_id: input_select.select_window_vid
+    to: 'Mountain Flowers'
+  action:
+    - service: script.turn_on
+      entity_id: script.pi_win_vid_mountainflowers
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_cam
+        option: "None"
+- alias: Pi Media Ocean Water Vid
+  trigger:
+    platform: state
+    entity_id: input_select.select_window_vid
+    to: 'Ocean Water'
+  action:
+    - service: script.turn_on
+      entity_id: script.pi_win_vid_oceanwater
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_cam
+        option: "None"
+- alias: Pi Media Snowy Scene Vid
+  trigger:
+    platform: state
+    entity_id: input_select.select_window_vid
+    to: 'Snowy Scene'
+  action:
+    - service: script.turn_on
+      entity_id: script.pi_win_vid_snowyscene
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_cam
+        option: "None"
+- alias: Pi Media Waterfall 01 Vid
+  trigger:
+    platform: state
+    entity_id: input_select.select_window_vid
+    to: 'Waterfall 01'
+  action:
+    - service: script.turn_on
+      entity_id: script.pi_win_vid_waterfall01
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_cam
+        option: "None"
+- alias: Pi Media Waterfall 02 Vid
+  trigger:
+    platform: state
+    entity_id: input_select.select_window_vid
+    to: 'Waterfall 02'
+  action:
+    - service: script.turn_on
+      entity_id: script.pi_win_vid_waterfall02
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_cam
+        option: "None"

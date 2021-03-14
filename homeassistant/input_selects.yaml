@@ -1,0 +1,28 @@
+# =======================
+#  Pi Window Cam and Vid
+# =======================
+select_window_cam:
+  name: Select Camera Feed
+  options:
+    - None
+    - Backyard
+    - Front Yard
+    - Back Porch
+    - Family Room
+    - Garage
+  initial: None
+select_window_vid:
+  name: Select Video Scene
+  options:
+    - None
+    - Beach 01
+    - Beach 02
+    - Beach 03
+    - Caribbean Dock
+    - Forest Stream
+    - Mountain Flowers
+    - Ocean Water
+    - Snowy Scene
+    - Waterfall 01
+    - Waterfall 02
+  initial: None

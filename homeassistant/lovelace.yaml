@@ -1,0 +1,56 @@
+cards:
+  - text: Pi Window Display
+    type: 'custom:text-divider-row'
+  - cards:
+      - hold_action:
+          action: more-info
+        name: Next Cam
+        show_icon: true
+        show_name: true
+        show_state: false
+        tap_action:
+          action: call-service
+          service: script.pi_win_next_cam
+        type: button
+      - hold_action:
+          action: more-info
+        name: Cam Loop
+        show_icon: true
+        show_name: true
+        show_state: false
+        tap_action:
+          action: call-service
+          service: script.pi_win_loop_cam
+        type: button
+      - hold_action:
+          action: more-info
+        name: Next Vid
+        show_icon: true
+        show_name: true
+        show_state: false
+        tap_action:
+          action: call-service
+          service: script.pi_win_next_vid
+        type: button
+      - hold_action:
+          action: more-info
+        name: Vid Loop
+        show_icon: true
+        show_name: true
+        show_state: false
+        tap_action:
+          action: call-service
+          service: script.pi_win_loop_vid
+        type: button
+    type: horizontal-stack
+  - cards:
+      - entities:
+          - entity: input_select.select_window_cam
+        title: Select Camera
+        type: entities
+      - entities:
+          - entity: input_select.select_window_vid
+        title: Select Video
+        type: entities
+    type: horizontal-stack
+type: vertical-stack

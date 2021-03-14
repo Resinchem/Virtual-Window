@@ -1,0 +1,186 @@
+# ==================================================
+# Sends commands via MQTT to vlc_player.py on Raspi
+# ==================================================
+# MQTT Topic: winpi/window/cmnd
+# MQTT Payload format: {"mode":"play_mode","title":"cam_vid_name"}
+# Valid play_modes:
+#       play_cam - streams camera named in "title" (from input_select)
+#       play_vid - plays video named in "title" (from input_select.)
+#       next_cam - show next cam in list - pass empty string for title
+#       cam_loop - start camera loop - pass empty string for title
+#       next_vid - show next vid in list - pass empty string for title
+#       vid_loop - start video loop - pass empty string for title
+# ========================
+#  CAMERAS - Play selected
+# ========================
+pi_win_cam_backyard:
+  alias: Play Backyard Camera
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"play_cam\", \"title\":\"Backyard\"}"
+pi_win_cam_frontyard:
+  alias: Play Front Yard Camera
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"play_cam\", \"title\":\"Front Yard\"}"
+pi_win_cam_backporch:
+  alias: Play Backporch Camera
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"play_cam\", \"title\":\"Back Porch\"}"
+pi_win_cam_familyroom:
+  alias: Play Family Room Camera
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"play_cam\", \"title\":\"Family Room\"}"
+pi_win_cam_garage:
+  alias: Play Garage Camera
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"play_cam\", \"title\":\"Garage\"}"
+# ----- Next and Loop -----
+pi_win_next_cam:
+  alias: Play Next Camera
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"next_cam\", \"title\":\"\"}"
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_cam
+        option: "None"
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_vid
+        option: "None"
+
+pi_win_loop_cam:
+  alias: Play Camera Loop
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"cam_loop\", \"title\":\"\"}"
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_cam
+        option: "None"
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_vid
+        option: "None"
+# ======================
+# VIDEOS - Play Selected
+# ======================
+pi_win_vid_beach01:
+  alias: Play Beach 1 Vid
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"play_vid\", \"title\":\"Beach 01\"}"
+pi_win_vid_beach02:
+  alias: Play Beach 2 Vid
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"play_vid\", \"title\":\"Beach 02\"}"
+pi_win_vid_beach03:
+  alias: Play Beach 3 Vid
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"play_vid\", \"title\":\"Beach 03\"}"
+pi_win_vid_caribbeandock:
+  alias: Play Caribbean Dock Vid
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"play_vid\", \"title\":\"Caribbean Dock\"}"
+pi_win_vid_foreststream:
+  alias: Play Forest Stream Vid
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"play_vid\", \"title\":\"Forest Stream\"}"
+pi_win_vid_mountainflowers:
+  alias: Play Mountain Flowers Vid
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"play_vid\", \"title\":\"Mountain Flowers\"}"
+pi_win_vid_oceanwater:
+  alias: Play Ocean Water Vid
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"play_vid\", \"title\":\"Ocean Water\"}"
+pi_win_vid_snowyscene:
+  alias: Play Snowy Scene Vid
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"play_vid\", \"title\":\"Snowy Scene\"}"
+pi_win_vid_waterfall01:
+  alias: Play Waterfall 1 Vid
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"play_vid\", \"title\":\"Waterfall 01\"}"
+pi_win_vid_waterfall02:
+  alias: Play Waterfall 2 Vid
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"play_vid\", \"title\":\"Waterfall 02\"}"
+# ---- Next and Loop -------
+pi_win_next_vid:
+  alias: Play Next Vid Scene
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"next_vid\", \"title\":\"\"}"
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_cam
+        option: "None"
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_vid
+        option: "None"
+pi_win_loop_vid:
+  alias: Play Video Loop
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: winpi/window/cmnd
+        payload: "{\"mode\":\"vid_loop\", \"title\":\"\"}"
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_cam
+        option: "None"
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.select_window_vid
+        option: "None"
