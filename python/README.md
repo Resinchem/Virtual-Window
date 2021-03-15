@@ -31,4 +31,4 @@ The application can be launched by running the command: ```python3 vlc_player.py
 
 The vids folder contains the royalty-free or creative commons videos used in the default Python application.
 
-### More details on installation, configuration and use can be found in the wiki
+### More details on installation, configuration and use can be found in the [wiki](https://github.com/Resinchem/Virtual-Window/wiki)
